@@ -1,0 +1,31 @@
+@import "src/assets/colors";
+
+
+.userStyles {
+  background-color: $primary;
+  padding: 17px 32px;
+  display: inline-flex;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 48px;
+  color: $white;
+}
+
+.userLetters {
+  width: 48px;
+  height: 48px;
+  background-color: $primary-secondary;
+  border-radius: 2px;
+  color: $white;
+  }
+
+.userName {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 34px;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 16px
+  }
