@@ -1,0 +1,11 @@
+@import "src/assets/colors";
+
+.burgerButton {
+  padding: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &:hover {
+    background-color: $primary;
+  }
+}
