@@ -4,28 +4,12 @@ import { CloseIcon, OpenedMenu } from "../../assets/icons";
 import Button from "../Button";
 import { ButtonType } from "../Button/Button";
 
-enum BurgerButtonState {
-  Open,
-  Close,
-}
 const BurgerButton = () => {
-  const [activeBurgerButton, setActiveBurgerButton] = useState(
-    BurgerButtonState.Open
-  );
-  const onBurgerClick = () => {
-    return activeBurgerButton === BurgerButtonState.Open
-      ? setActiveBurgerButton(BurgerButtonState.Close)
-      : setActiveBurgerButton(BurgerButtonState.Open);
-  };
+  const [isOpened, setOpened] = useState(true);
+  const onBurgerClick = () => setOpened(!isOpened);
   return (
     <Button
-      title={
-        activeBurgerButton === BurgerButtonState.Open ? (
-          <OpenedMenu />
-        ) : (
-          <CloseIcon />
-        )
-      }
+      title={isOpened ? <OpenedMenu /> : <CloseIcon />}
       onClick={onBurgerClick}
       type={ButtonType.Primary}
       className={styles.burgerButton}
