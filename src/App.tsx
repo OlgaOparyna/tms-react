@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }  from "react";
 import "./App.scss";
 
 import Button from "./components/Button";
@@ -24,6 +24,9 @@ const MOCK_CARD = {
   author: 2,
 };
 const App = () => {
+  const [text, setText] = useState("");
+  const onChange = (value: string) => {
+    setText(value)}
   return (
     <div className={styles.container}>
       <Button title={"Primary"} onClick={() => {}} type={ButtonType.Primary} />
@@ -41,9 +44,9 @@ const App = () => {
       <Card card={MOCK_CARD} size={CardSize.Large} />
       <Card card={MOCK_CARD} size={CardSize.Medium} />
       <Card card={MOCK_CARD} size={CardSize.Small} />
-      <Input title={"Title"} placeholder={"Placeholder"} />
-      <Input title={"Title"} placeholder={"Text"} disabled />
-      <Input title={"Title"} placeholder={"Text"} />
+      <Input value={text} onChange={onChange} title="Title" placeholder="Placeholder"/>
+      <Input value={text} onChange={onChange} title="Title" placeholder="Placeholder" disabled/>
+      <Input value={text} onChange={onChange} title="Title" placeholder="Placeholder" errorText ={"Error text"} />
        </div>
   );
 };

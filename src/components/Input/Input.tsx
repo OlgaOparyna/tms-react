@@ -1,36 +1,41 @@
-import React, { FC, useState } from "react";
+import React, { FC, ChangeEvent } from "react";
 import classNames from "classnames";
 import styles from "./Input.module.scss";
-import { ButtonType } from "../Button/Button";
 
 type InputProps = {
   title: string;
+  value: string;
+  onChange: (value: string) => void;
   placeholder: string;
   disabled?: boolean;
-  className?: string;
+  errorText?: string;
 };
-const Input: FC<InputProps> = ({ title, placeholder, disabled, className }) => {
-  const [errorState, setErrorState] = useState(false);
-  const onInputClick = ()=>{
-    setErrorState (!errorState)
-  }
+const Input: FC<InputProps> = ({ title, value,onChange, placeholder, disabled, errorText}) => {
+  const onChangeText = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange(e.target.value);
+  };
   return (
     <div>
       <label className={styles.title}>{title}</label>
       <input
-        type="text"
+        value={value}
         className={classNames(styles.input, {
-          [styles.disabledInput]: disabled === true,
-          [styles.errorInput]: errorState,
+          [styles.disabledInput]: disabled,
+          [styles.errorInput]: errorText,
         })}
         placeholder={placeholder}
+        onChange={onChangeText}
         disabled={disabled}
-        onChange={() => {}}
-        onClick ={onInputClick}
       />
-      {/*не понимаю, как включить состояние error*/}
+      {errorText && <div className={styles.errorText}>{errorText}</div>}
     </div>
   );
 };
+
+
+
+
+
+
 
 export default Input;
