@@ -4,11 +4,11 @@ import styles from "./Title.module.scss";
 
 
 type TitleProps = {
-  blog: string;
+  title: string;
 };
-const Title: FC<TitleProps> = ({ blog }) => {
+const Title: FC<TitleProps> = ({ title }) => {
   return (
-    <h1 className={styles.title}>{ blog }</h1>
+    <h1 className={styles.title}>{ title }</h1>
   );
 };
 export default Title;

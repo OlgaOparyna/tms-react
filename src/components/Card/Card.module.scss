@@ -9,6 +9,7 @@
   border-bottom: 1px solid $medium;
   max-width: 736px;
   height: 451px;
+  box-sizing: border-box;
  }
 .mediumContainer{
   max-width: 352px;
@@ -17,7 +18,7 @@
 .smallContainer{
   max-width: 354px;
   height: 206px;
-  gap: 23px;
+  gap: 18px;
 }
 .infoContainer{
   display: flex;

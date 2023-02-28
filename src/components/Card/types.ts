@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-import classNames from "classnames";
-
-export type Card= {
+export type CardType= {
 id: number;
 image: string;
 text: string;
@@ -19,6 +16,6 @@ export enum CardSize {
 }
 
 export type CardProps ={
-  card: Card;
+  card: CardType;
   size: CardSize
 }
