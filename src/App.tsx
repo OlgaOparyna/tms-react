@@ -12,14 +12,16 @@ import { CardSize } from "./components/Card/types";
 import styles from "./App.module.scss";
 import Input from "./components/Input";
 import Home from "./pages/Home";
+import SelectedPost from "./pages/SelectedPost";
 
 
 const App = () => {
-  const [text, setText] = useState("");
-  const onChange = (value: string) => {
-    setText(value)}
+  // const [text, setText] = useState("");
+  // const onChange = (value: string) => {
+  //   setText(value)}
   return (
     <div className={styles.container}>
+      <SelectedPost/>
       {/*<Button title={"Primary"} onClick={() => {}} type={ButtonType.Primary} />*/}
       {/*<Button*/}
       {/*  disabled*/}
@@ -29,14 +31,14 @@ const App = () => {
       {/*/>*/}
       {/*<Button title={"Error"} onClick={() => {}} type={ButtonType.Error} />*/}
       {/*<User userName={"Artem Malkin"} />*/}
-      <Home/>
+      {/*<Home/>*/}
       {/*<BurgerButton />*/}
       {/*<Card card={MOCK_CARD} size={CardSize.Large} />*/}
       {/*<Card card={MOCK_CARD} size={CardSize.Medium} />*/}
       {/*<Card card={MOCK_CARD} size={CardSize.Small} />*/}
-      <Input value={text} onChange={onChange} title="Title" placeholder="Placeholder"/>
-      <Input value={text} onChange={onChange} title="Title" placeholder="Placeholder" disabled/>
-      <Input value={text} onChange={onChange} title="Title" placeholder="Placeholder" errorText = {"Error text"} />
+      {/*<Input value={text} onChange={onChange} title="Title" placeholder="Placeholder"/>*/}
+      {/*<Input value={text} onChange={onChange} title="Title" placeholder="Placeholder" disabled/>*/}
+      {/*<Input value={text} onChange={onChange} title="Title" placeholder="Placeholder" errorText = {"Error text"} />*/}
        </div>
   );
 };

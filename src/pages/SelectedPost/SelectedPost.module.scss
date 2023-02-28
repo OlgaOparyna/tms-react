@@ -1,0 +1,78 @@
+@import "../../assets/colors";
+
+.container{
+  max-width: 1120px;
+  margin: 72px auto;
+  //border-bottom: 1px solid $medium;
+}
+.bread_crumbs{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+.home{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $secondary;
+  }
+.line{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: $gray;
+}
+.post_number{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $gray;
+}
+.mainblock{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 32px 0 48px;
+}
+.title{
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 80px;
+  color: $secondary;
+  text-align: justify;
+}
+.image{
+  width: 992px;
+  height: 518px;
+}
+.text{
+  max-width: 920px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  color: $secondary;
+}
+.buttons{
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left_buttons{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+}
+.right_buttons{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: $secondary;
+}

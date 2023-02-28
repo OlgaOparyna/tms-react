@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 
 import styles from "./Home.module.scss";
 import Title from "../../components/Title";
-import Tabs from "../../components/Tabs";
+import Tabs  from "../../components/Tabs";
 import CardsList from "../../components/CardList";
 import { CardType } from "../../components/Card";
+import { TabsNames } from "../../components/Tabs/types";
 
 const MOCK_ARRAY = [
   {
@@ -153,9 +154,27 @@ const MOCK_ARRAY = [
   },
 ];
 
+const TABS_LIST = [
+  {
+    title: "All",
+    disabled: false,
+    key: TabsNames.ALL,
+  },
+  {
+    title: "My favorites",
+    disabled: false,
+    key: TabsNames.FAVORITES,
+  },
+  {
+    title: "Popular",
+    disabled: true,
+    key: TabsNames.POPULAR,
+  },
+];
 const Home = () => {
-  const [cardsList, setCardsList] = useState<CardType[]>([]);
-
+  const [activeTab, setActiveTab] = useState(TabsNames.ALL);
+  const onTabClick = (key: TabsNames)=>()=>setActiveTab(key);
+    const [cardsList, setCardsList] = useState<CardType[]>([]);
   useEffect(() => {
     setCardsList(MOCK_ARRAY);
   }, [MOCK_ARRAY]);
@@ -163,7 +182,7 @@ const Home = () => {
   return (
     <div>
       <Title title={"Blog"} />
-      <Tabs />
+      <Tabs tabsListArray={TABS_LIST} activeTab={activeTab} onTabClick={onTabClick} />
       <CardsList cardsList={MOCK_ARRAY} />
     </div>
   );
