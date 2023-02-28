@@ -16,9 +16,9 @@ import SelectedPost from "./pages/SelectedPost";
 
 
 const App = () => {
-  // const [text, setText] = useState("");
-  // const onChange = (value: string) => {
-  //   setText(value)}
+  const [text, setText] = useState("");
+  const onChange = (value: string) => {
+  setText(value)}
   return (
     <div className={styles.container}>
       <SelectedPost/>

@@ -1,35 +1,35 @@
 @import "../../assets/colors";
 
-.container{
+.container {
   max-width: 1120px;
   margin: 72px auto;
   //border-bottom: 1px solid $medium;
 }
-.bread_crumbs{
+.bread_crumbs {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
 }
-.home{
+.home {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: $secondary;
-  }
-.line{
+}
+.line {
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
   color: $gray;
 }
-.post_number{
+.post_number {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: $gray;
 }
-.mainblock{
+.mainblock {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,36 +37,36 @@
   gap: 48px;
   padding: 32px 0 48px;
 }
-.title{
+.title {
   font-weight: 700;
   font-size: 56px;
   line-height: 80px;
   color: $secondary;
   text-align: justify;
 }
-.image{
+.image {
   width: 992px;
   height: 518px;
 }
-.text{
+.text {
   max-width: 920px;
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
   color: $secondary;
 }
-.buttons{
-display: flex;
+.buttons {
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.left_buttons{
+.left_buttons {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 6px;
 }
-.right_buttons{
+.right_buttons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
