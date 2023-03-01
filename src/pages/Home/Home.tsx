@@ -173,7 +173,8 @@ const TABS_LIST = [
 ];
 const Home = () => {
   const [activeTab, setActiveTab] = useState(TabsNames.ALL);
-  const onTabClick = (key: TabsNames)=>()=>setActiveTab(key);
+  const onTabClick = (key: TabsNames)=>setActiveTab(key);
+
     const [cardsList, setCardsList] = useState<CardType[]>([]);
   useEffect(() => {
     setCardsList(MOCK_ARRAY);
@@ -182,7 +183,7 @@ const Home = () => {
   return (
     <div>
       <Title title={"Blog"} />
-      <Tabs tabsListArray={TABS_LIST} activeTab={activeTab} onTabClick={onTabClick} />
+      <Tabs tabsListArray={TABS_LIST} activeTab={activeTab} onClick={onTabClick} />
       <CardsList cardsList={MOCK_ARRAY} />
     </div>
   );

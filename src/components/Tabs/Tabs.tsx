@@ -2,10 +2,10 @@ import React, { FC } from "react";
 import classNames from "classnames";
 
 import styles from "./Tabs.module.scss";
-import { TabsProps } from "./types";
+import { TabsNames, TabsProps } from "./types";
 
-const Tabs: FC<TabsProps> = ({ tabsListArray, activeTab, onTabClick }) => {
-
+const Tabs: FC<TabsProps> = ({ tabsListArray, activeTab, onClick }) => {
+  const onTabClick = (key: TabsNames)=>()=>onClick(key);
   return (
     <div className={styles.container}>
       {tabsListArray.map((tab) => {

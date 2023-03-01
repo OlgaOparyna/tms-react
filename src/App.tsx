@@ -31,7 +31,7 @@ const App = () => {
       {/*/>*/}
       {/*<Button title={"Error"} onClick={() => {}} type={ButtonType.Error} />*/}
       {/*<User userName={"Artem Malkin"} />*/}
-      {/*<Home/>*/}
+     <Home/>
       {/*<BurgerButton />*/}
       {/*<Card card={MOCK_CARD} size={CardSize.Large} />*/}
       {/*<Card card={MOCK_CARD} size={CardSize.Medium} />*/}
