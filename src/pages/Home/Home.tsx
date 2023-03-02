@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 
 import styles from "./Home.module.scss";
 import Title from "../../components/Title";
-import Tabs  from "../../components/Tabs";
+import Tabs from "../../components/Tabs";
 import CardsList from "../../components/CardList";
 import { CardType } from "../../components/Card";
 import { TabsNames } from "../../components/Tabs/types";
+import classNames from "classnames";
+import { Theme, useThemeContext } from "../../context/Theme/Context";
 
 const MOCK_ARRAY = [
   {
@@ -173,17 +175,23 @@ const TABS_LIST = [
 ];
 const Home = () => {
   const [activeTab, setActiveTab] = useState(TabsNames.ALL);
-  const onTabClick = (key: TabsNames)=>setActiveTab(key);
+  const onTabClick = (key: TabsNames) => setActiveTab(key);
 
-    const [cardsList, setCardsList] = useState<CardType[]>([]);
+  const [cardsList, setCardsList] = useState<CardType[]>([]);
   useEffect(() => {
     setCardsList(MOCK_ARRAY);
   }, [MOCK_ARRAY]);
-
+  const { theme } = useThemeContext();
   return (
-    <div>
+    <div
+      className={classNames(styles.container, { [styles.darkContainer]: theme === Theme.Dark })}
+    >
       <Title title={"Blog"} />
-      <Tabs tabsListArray={TABS_LIST} activeTab={activeTab} onClick={onTabClick} />
+      <Tabs
+        tabsListArray={TABS_LIST}
+        activeTab={activeTab}
+        onClick={onTabClick}
+      />
       <CardsList cardsList={MOCK_ARRAY} />
     </div>
   );

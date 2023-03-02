@@ -20,6 +20,9 @@
   height: 206px;
   gap: 18px;
 }
+.darkContainer{
+  border-bottom-color: $gray;
+}
 .infoContainer{
   display: flex;
   justify-content: space-between;
@@ -53,6 +56,9 @@
   line-height: 44px;
   color: $secondary;
 }
+.darkTitle{
+  color: $white;
+}
 .mediumTitle{
   font-weight: 600;
   font-size: 18px;
@@ -84,4 +90,9 @@
 .iconContainer{
   display: flex;
   gap: 24px;
+}
+.darkIconContainer{
+  div > svg > path {
+    fill: $white;
+  }
 }

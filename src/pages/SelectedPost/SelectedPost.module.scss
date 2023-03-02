@@ -1,9 +1,11 @@
 @import "../../assets/colors";
 
 .container {
-  max-width: 1120px;
-  margin: 72px auto;
+  //max-width: 1120px;
   //border-bottom: 1px solid $medium;
+}
+.darkContainer{
+  background-color: $secondary;
 }
 .bread_crumbs {
   display: flex;
@@ -16,6 +18,9 @@
   font-size: 16px;
   line-height: 24px;
   color: $secondary;
+}
+.darkHome{
+  color: $gray;
 }
 .line {
   font-weight: 500;
@@ -44,6 +49,9 @@
   color: $secondary;
   text-align: justify;
 }
+.darkTitle{
+  color: $white;
+}
 .image {
   width: 992px;
   height: 518px;
@@ -54,6 +62,9 @@
   font-size: 18px;
   line-height: 32px;
   color: $secondary;
+}
+.darkText{
+  color: $white;
 }
 .buttons {
   display: flex;

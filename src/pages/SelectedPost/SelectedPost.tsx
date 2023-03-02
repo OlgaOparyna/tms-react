@@ -3,17 +3,28 @@ import Button from "../../components/Button";
 import { BookmarkIcon, DislikeIcon, LikeIcon } from "../../assets/icons";
 import { ButtonType } from "../../components/Button/Button";
 import styles from "./SelectedPost.module.scss";
+import { Theme, useThemeContext } from "../../context/Theme/Context";
+import classNames from "classnames";
 
 const SelectedPost = () => {
+  const { theme } = useThemeContext();
+  const isDark = theme === Theme.Dark;
   return (
-    <div className={styles.container}>
+    <div className={classNames(styles.container, {
+      [styles.darkContainer]: isDark,
+    })}>
       <div className={styles.bread_crumbs}>
-        <div className={styles.home}>Home</div>
+        <div className={classNames(styles.home, {
+          [styles.darkHome]: isDark,
+        })}
+        >Home</div>
         <div className={styles.line}>|</div>
         <div className={styles.post_number}>Post 14278</div>
       </div>
       <div className={styles.mainblock}>
-        <div className={styles.title}>
+        <div className={classNames(styles.title, {
+          [styles.darkTitle]: isDark,
+        })}>
           Astronauts prep for new solar arrays on nearly seven-hour spacewalk
         </div>
         <img
@@ -21,7 +32,9 @@ const SelectedPost = () => {
           src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg"
           alt=" "
         />
-        <p className={styles.text}>
+        <p className={classNames(styles.text, {
+          [styles.darkText]: isDark,
+        })}>
           Astronauts Kayla Barron and Raja Chari floated out of the
           International Space Station airlock for a spacewalk Tuesday,
           installing brackets and struts to support new solar arrays to upgrade
