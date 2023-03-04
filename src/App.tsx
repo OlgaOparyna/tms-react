@@ -9,25 +9,24 @@ import SelectedPost from "./pages/SelectedPost";
 import ThemeProvider from "./context/Theme/Provider";
 import { Theme } from "./context/Theme/Context";
 import ThemeSwitcher from "./components/ThemeSwitcher";
+import SignIn from "./pages/SignIn";
+import Success from "./pages/Success";
 
 const App = () => {
-  // const [text, setText] = useState("");
-  // const onChange = (value: string) => {
-  // setText(value)}
   const [theme, setTheme] = useState(Theme.Ligth);
   const onChangeTheme = (value: Theme) => {
     setTheme(value);
   };
-  return (
+  return (<div className={styles.container}>
     <ThemeProvider theme={theme} onChangeTheme={onChangeTheme}>
       <ThemeSwitcher/>
-      <SelectedPost />
-      <Home />
+      <Success/>
+      <SignIn/>
+      {/*<SelectedPost />*/}
+      {/*<Home />*/}
       {/*<BurgerButton />*/}
-      {/*<Input value={text} onChange={onChange} title="Title" placeholder="Placeholder"/>*/}
-      {/*<Input value={text} onChange={onChange} title="Title" placeholder="Placeholder" disabled/>*/}
-      {/*<Input value={text} onChange={onChange} title="Title" placeholder="Placeholder" errorText = {"Error text"} />*/}
     </ThemeProvider>
+    </div>
   );
 };
 
