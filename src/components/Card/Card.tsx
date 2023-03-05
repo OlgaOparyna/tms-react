@@ -8,17 +8,21 @@ import {
   LikeIcon,
   MoreIcon,
 } from "../../assets/icons";
+import { Theme, useThemeContext } from "../../context/Theme/Context";
 
 const Card: FC<CardProps> = ({ card, size }) => {
   const { title, text, date, image } = card;
   const isLarge = size === CardSize.Large
   const isMedium = size === CardSize.Medium
   const isSmall = size === CardSize.Small
+  const { theme } = useThemeContext();
+  const isDark = theme === Theme.Dark;
   return (
     <div
       className={classNames(styles.container, {
         [styles.mediumContainer]: isMedium,
         [styles.smallContainer]: isSmall,
+        [styles.darkContainer]: isDark,
       })}
     >
       <div
@@ -33,6 +37,7 @@ const Card: FC<CardProps> = ({ card, size }) => {
             <div
               className={classNames(styles.title, {
                 [styles.mediumTitle]: !isLarge,
+                [styles.darkTitle]: isDark,
               })}
             >
               {title}
@@ -50,7 +55,9 @@ const Card: FC<CardProps> = ({ card, size }) => {
         />
       </div>
       <div className={styles.footer}>
-        <div className={styles.iconContainer}>
+        <div className={classNames(styles.iconContainer, {
+          [styles.darkIconContainer]: isDark,
+        })}>
           <div>
             <LikeIcon />
           </div>
@@ -58,7 +65,9 @@ const Card: FC<CardProps> = ({ card, size }) => {
             <DislikeIcon />
           </div>
         </div>
-        <div className={styles.iconContainer}>
+        <div className={classNames(styles.iconContainer, {
+          [styles.darkIconContainer]: isDark,
+        })}>
           <div>
             <BookmarkIcon />
           </div>

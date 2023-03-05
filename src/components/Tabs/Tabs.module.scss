@@ -5,6 +5,15 @@
   gap: 80px;
   border-bottom: 1px solid $medium;
 }
+.darkContainer{
+  border-bottom-color: $gray;
+  .tab{
+    color: $white;
+  }
+  .activeTab{
+    border-bottom-color: $white;
+  }
+}
 .tab{
   padding: 40px 24px;
   font-weight: 600;
