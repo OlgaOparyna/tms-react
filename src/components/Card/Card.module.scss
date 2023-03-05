@@ -1,0 +1,86 @@
+@import "src/assets/colors";
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $medium;
+  max-width: 736px;
+  height: 451px;
+ }
+.mediumContainer{
+  max-width: 352px;
+  gap: 27px;
+}
+.smallContainer{
+  max-width: 354px;
+  height: 206px;
+  gap: 23px;
+}
+.infoContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.mediumInfoContainer{
+  flex-direction: column-reverse;
+  gap: 24px;
+}
+.smallInfoContainer{
+  gap: 34px;
+}
+.mainInfoContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.titleContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.date{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $gray;
+}
+.title{
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  color: $secondary;
+}
+.mediumTitle{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+}
+.text{
+  ont-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: $gray;
+}
+.image{
+  max-width: 256px;
+  max-height: 244px;
+  object-fit: cover;
+}
+.mediumImage{
+  max-width: 352px;
+  max-height: 246px;
+}
+.smallImage{
+  max-width: 96px;
+  max-height: 96px;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+}
+.iconContainer{
+  display: flex;
+  gap: 24px;
+}

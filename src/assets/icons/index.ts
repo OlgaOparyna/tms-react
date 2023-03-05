@@ -1,2 +1,6 @@
 export {CloseIcon} from "./CloseIcon"
 export {OpenedMenu} from "./OpenedMenu"
+export {LikeIcon} from "./LikeIcon"
+export {DislikeIcon} from "./DislikeIcon"
+export {MoreIcon} from "./MoreIcon"
+export {BookmarkIcon} from "./BookmarkIcon"
