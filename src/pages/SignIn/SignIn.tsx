@@ -6,6 +6,8 @@ import { ButtonType } from "../../components/Button/Button";
 import styles from "./SignIn.module.scss";
 import { Theme, useThemeContext } from "../../context/Theme/Context";
 import classNames from "classnames";
+import { NavLink } from "react-router-dom";
+import { RoutesList } from "../Router";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -69,7 +71,14 @@ const SignIn = () => {
               [styles.darkSingUp]: isDark,
             })}
           >
-            Don’t have an account? <span>Sign Up</span>
+            Don’t have an account?{" "}
+            <NavLink
+              className={classNames(styles.navLink, {
+                [styles.darkNavLink]: isDark,
+              })}
+              to={RoutesList.SignUp}>
+              Sign Up
+            </NavLink>
           </div>
         </div>
       </div>
