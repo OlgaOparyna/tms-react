@@ -5,11 +5,11 @@ import Button from "../Button";
 import { ButtonType } from "../Button/Button";
 
 const BurgerButton = () => {
-  const [isOpened, setOpened] = useState(true);
+  const [isOpened, setOpened] = useState(false);
   const onBurgerClick = () => setOpened(!isOpened);
   return (
     <Button
-      title={isOpened ? <OpenedMenu /> : <CloseIcon />}
+      title={isOpened ? <CloseIcon />  : <OpenedMenu /> }
       onClick={onBurgerClick}
       type={ButtonType.Primary}
       className={styles.burgerButton}

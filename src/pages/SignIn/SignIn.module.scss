@@ -1,0 +1,65 @@
+@import "src/assets/colors";
+
+.darkContainer{
+  background-color: $secondary;
+}
+.backHome {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $secondary;
+}
+.darkBackHome{
+  color: $white;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  }
+.inputContainer {
+  border: 1px solid $medium;
+  padding: 0 40px;
+  width: 544px;
+}
+.darkInputContainer{
+  border-color: $gray;
+}
+.forgotPassword {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $secondary;
+  padding-top: 16px;
+}
+.darkForgotPassword{
+  color: $white;
+}
+.button {
+  text-align: center;
+  margin-top: 48px;
+  width: 544px;
+}
+.singUp {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: $gray;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 40px;
+}
+.darkSingUp{
+  color:$medium;
+}
+.navLink {
+  margin-left: 4px;
+  text-decoration: none;
+  color: $primary;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.darkNavLink{
+  color: $primary-secondary;
+}

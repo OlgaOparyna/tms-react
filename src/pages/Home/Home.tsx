@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import styles from "./Home.module.scss";
 import Title from "../../components/Title";
 import Tabs from "../../components/Tabs";
 import CardsList from "../../components/CardList";
 import { CardType } from "../../components/Card";
 import { TabsNames } from "../../components/Tabs/types";
-import classNames from "classnames";
-import { Theme, useThemeContext } from "../../context/Theme/Context";
 
 const MOCK_ARRAY = [
   {
@@ -181,11 +178,9 @@ const Home = () => {
   useEffect(() => {
     setCardsList(MOCK_ARRAY);
   }, [MOCK_ARRAY]);
-  const { theme } = useThemeContext();
+
   return (
-    <div
-      className={classNames(styles.container, { [styles.darkContainer]: theme === Theme.Dark })}
-    >
+    <div>
       <Title title={"Blog"} />
       <Tabs
         tabsListArray={TABS_LIST}

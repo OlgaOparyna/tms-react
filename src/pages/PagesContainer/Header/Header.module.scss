@@ -1,0 +1,61 @@
+@import "src/assets/colors";
+
+.container{
+  height: 84px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $primary;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.burgerButton {
+  padding: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &:hover {
+    background-color: $primary;
+  }
+}
+.menuContainer{
+  position: absolute;
+  top: 84px;
+  left: 0;
+  background-color: $white;
+  width: 236px;
+  height: calc(100% - 84px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.actionsContainer{
+  display: flex;
+  flex-direction: column;
+}
+.navButton{
+  height: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid $light;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: $secondary;
+  &:hover {
+    color: $primary;
+    cursor: pointer;
+  }
+}
+.activeNavButton{
+  color: $primary;
+}
+.authButton{
+  height: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
