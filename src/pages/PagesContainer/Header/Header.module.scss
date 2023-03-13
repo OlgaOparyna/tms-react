@@ -15,7 +15,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  &:hover {
+    &:hover {
     background-color: $primary;
   }
 }
@@ -58,4 +58,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  }
