@@ -2,42 +2,51 @@ import React, { FC } from "react";
 import { CardProps, CardSize } from "./types";
 import classNames from "classnames";
 import styles from "./Card.module.scss";
-import { BookmarkIcon, DislikeIcon, LikeIcon, MoreIcon } from "../../assets/icons";
+import {
+  BookmarkIcon, BookmarkIconBlack,
+  DislikeIcon,
+  LikeIcon,
+  MoreIcon
+} from "../../assets/icons";
 import { Theme, useThemeContext } from "../../context/Theme/Context";
 import { useDispatch, useSelector } from "react-redux";
 import {
   LikeStatus,
   PostSelectors,
   setPostVisibility,
+  setSavedPosts,
   setSelectedPost,
-  setStatus
+  setStatus,
 } from "../../redux/reducers/postSlice";
 
 const Card: FC<CardProps> = ({ card, size }) => {
   const { title, text, date, image } = card;
   const { theme } = useThemeContext();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const isVisible = useSelector(PostSelectors.getVisibleSelectedModal);
   const likePosts = useSelector(PostSelectors.getLikePosts);
   const dislikePosts = useSelector(PostSelectors.getDislikePosts);
-  const likeIndex = likePosts.findIndex(
-    (post) => post.id === card.id
-  );
-  const dislikeIndex = dislikePosts.findIndex(
+  const savedPosts = useSelector(PostSelectors.getSavedPosts);
+  const likeIndex = likePosts.findIndex((post) => post.id === card.id);
+  const dislikeIndex = dislikePosts.findIndex((post) => post.id === card.id);
+  const savedPostsIndex = savedPosts.findIndex(
     (post) => post.id === card.id
   );
 
-  const isLarge = size === CardSize.Large
-  const isMedium = size === CardSize.Medium
-  const isSmall = size === CardSize.Small
+  const isLarge = size === CardSize.Large;
+  const isMedium = size === CardSize.Medium;
+  const isSmall = size === CardSize.Small;
   const isDark = theme === Theme.Dark;
-  const onClickMore = ()=>{
-    dispatch(setSelectedPost(card))
-    dispatch(setPostVisibility(true))
-  }
-  const onStatusClick = (status: LikeStatus)=>()=> {
-    dispatch(setStatus({status, card}))
-  }
+  const onClickMore = () => {
+    dispatch(setSelectedPost(card));
+    dispatch(setPostVisibility(true));
+  };
+  const onStatusClick = (status: LikeStatus) => () => {
+    dispatch(setStatus({ status, card }));
+  };
+  const onBookmarkClick = () => {
+    dispatch(setSavedPosts(card));
+  };
   return (
     <div
       className={classNames(styles.container, {
@@ -76,25 +85,31 @@ const Card: FC<CardProps> = ({ card, size }) => {
         />
       </div>
       <div className={styles.footer}>
-        <div className={classNames(styles.iconContainer, {
-          [styles.darkIconContainer]: isDark,
-        })}>
+        <div
+          className={classNames(styles.iconContainer, {
+            [styles.darkIconContainer]: isDark,
+          })}
+        >
           <div onClick={onStatusClick(LikeStatus.Like)}>
-            <LikeIcon /> {likeIndex> -1 && 1}
+            <LikeIcon /> {likeIndex > -1 && 1}
           </div>
           <div onClick={onStatusClick(LikeStatus.Dislike)}>
-            <DislikeIcon /> {dislikeIndex> -1 && 1}
+            <DislikeIcon /> {dislikeIndex > -1 && 1}
           </div>
         </div>
-        <div className={classNames(styles.iconContainer, {
-          [styles.darkIconContainer]: isDark,
-        })}>
-          <div>
-            <BookmarkIcon />
+        <div
+          className={classNames(styles.iconContainer, {
+            [styles.darkIconContainer]: isDark,
+          })}
+        >
+          <div onClick={onBookmarkClick}>
+            {savedPostsIndex === -1 ? <BookmarkIcon/>: <BookmarkIconBlack /> }
           </div>
-          {!isVisible && <div onClick={onClickMore}>
-            <MoreIcon />
-          </div>}
+          {!isVisible && (
+            <div onClick={onClickMore}>
+              <MoreIcon />
+            </div>
+          )}
         </div>
       </div>
     </div>
